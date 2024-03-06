@@ -624,9 +624,9 @@
           </p>
 
           <div
-            class="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4"
+            class="row gap-lg-grid-gutter align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4"
           >
-            <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 py-3">
+            <div class="col">
               <h3 class="h4 mb-4">Promo Spesial Bulan Ini</h3>
 
               <img src="images/baner hero desktop (1).webp" alt="" />
@@ -677,7 +677,7 @@
                 </button>
               </div>
             </div>
-            <div class="col-md-7 bg-info p-5 col-lg-6 mb-4 mb-md-0 rounded-3">
+            <div class="col bg-info p-5 rounded">
               <div class="d-flex align-items-center bg-primary p-4 rounded-3">
                 <h4 class="text-light">Simulasi Pinjaman Jaminan BPKB Mobil</h4>
                 <img
@@ -685,12 +685,89 @@
                   alt=""
                 />
               </div>
-              <div class="d-flex mt-4 align-items-center">
-                <p class="text-light">
-                  Merk <br />
-                  Honda
-                </p>
+              <div class="d-flex justify-content-between">
+                <div class="mt-4 align-items-center justify-content-between">
+                  <p class="text-light fs-5">
+                    Merk <br />
+                    <span class="fw-bold">Honda</span>
+                  </p>
+                  <p class="text-light fs-5">
+                    Tahun <br />
+                    <span class="fw-bold">2018</span>
+                  </p>
+                </div>
+                <div class="mt-4 align-items-center justify-content-between">
+                  <p class="text-light fs-5">
+                    Model <br />
+                    <span class="fw-bold">Honda Brio RS 12 AT</span>
+                  </p>
+
+                  <p class="text-light fs-5">
+                    Maksimum Pembiayaan <br />
+                    <span class="fw-bold">Rp 109.980.000</span>
+                  </p>
+                </div>
               </div>
+
+              <div class="input-group mb-3">
+                <div class="d-flex w-100">
+                  <span
+                    class="input-group-text rounded-0 text-info"
+                    id="basic-addon1"
+                    >Rp:
+                  </span>
+                  <input
+                    type="text "
+                    class="form-control rounded-0"
+                    id="rangeValue"
+                    placeholder="10.000.000"
+                    aria-label="Range Value"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="w-100 mt-3">
+                  <div class="d-flex text-white justify-content-between">
+                    <div>Rp. 10.000.000</div>
+                    <div>Rp. 109.000.000</div>
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  class="form-range mt-2"
+                  id="customRange1"
+                  min="10000000"
+                  max="108980000"
+                  step="1"
+                  oninput="updateTextInput(this.value)"
+                />
+              </div>
+              <div class="dropdown w-100">
+                <button
+                  class="btn btn-primary dropdown-toggle w-100"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Pilih Tenor Pembayaran
+                </button>
+                <ul class="dropdown-menu w-100 rounded-0">
+                  <li><a class="dropdown-item" href="#">12 Bulan</a></li>
+                  <li><a class="dropdown-item" href="#">24 Bulan</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">36 Bulan</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-light mt-4 rounded text-center p-5">
+                <p class="text-info">Estimasi Angsuran Per Bulan</p>
+                <p class="text-info fw-bold fs-1">Rp. 1.327.000</p>
+                <button class="w-100 btn btn-outline-info">Hitung</button>
+              </div>
+              <p class="mt-4 text-light">
+                *Nominal bersifat estimasi, ajukan untuk cek angsuran sesuai
+                mobil yang dijaminkan
+              </p>
             </div>
           </div>
         </div>
@@ -1646,6 +1723,15 @@
 
       <!-- Footer End -->
     </main>
+    <script>
+      function updateTextInput(val) {
+        // Format the value with commas for thousands separators
+        let formattedValue = parseInt(val).toLocaleString("en");
+        document.getElementById("rangeValue").value = formattedValue;
+        // Update the actual value of the range input
+        document.getElementById("customRange1").value = val;
+      }
+    </script>
 
     <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/simplebar/dist/simplebar.min.js"></script>
