@@ -559,8 +559,118 @@
                 </button>
               </div>
             </div>
-            <div class="col bg-info p-5 rounded">
-              <div class="d-flex align-items-center bg-primary p-4 rounded-3">
+            <div class="col bg-light p-5 rounded">
+              <div
+                class="mx-auto me-md-5 me-xl-7 ps-3 py-md-3 order-md-1"
+                style="max-width: 516px"
+              >
+                <form class="needs-validation" id="contactForm">
+                  <h2 class="pb-4">Dapatkan Pinjaman Dana Kamu Disini</h2>
+                  <p
+                    class="callout d-block d-md-none d-lg-block fs-lg text-muted mb-grid-gutter"
+                  >
+                    Ajukan Pinjaman dengan BPKB MOTOR, BPKB Mobil, atau BPKB
+                    Truck.
+                  </p>
+                  <b>Informasi Diri</b>
+                  <div class="input-group mb-3 mt-2">
+                    <i
+                      class="fas fa-user position-absolute top-50 start-0 translate-middle-y ms-3"
+                    ></i>
+                    <input
+                      class="form-control rounded"
+                      type="text"
+                      name="nama"
+                      placeholder="Nama"
+                      required
+                    />
+                  </div>
+                  <div class="input-group mb-3">
+                    <i
+                      class="fas fa-mobile-alt position-absolute top-50 start-0 translate-middle-y ms-3"
+                    ></i>
+                    <input
+                      class="form-control rounded"
+                      type="text"
+                      name="hp"
+                      placeholder="Nomor Handphone"
+                      required
+                    />
+                  </div>
+                  <div class="input-group mb-3">
+                    <i
+                      class="fas fa-building position-absolute top-50 start-0 translate-middle-y ms-3"
+                    ></i>
+                    <input
+                      class="form-control rounded"
+                      type="text"
+                      name="kota"
+                      placeholder="Kota"
+                      required
+                    />
+                  </div>
+                  <b>Divisi</b>
+                  <div class="form-check mt-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="ex-radio-1"
+                      name="divisi"
+                      value="Customer Service"
+                      checked
+                    />
+                    <label class="form-check-label" for="ex-radio-1"
+                      >Customer Service</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="ex-radio-2"
+                      name="divisi"
+                      value="Marketing BPKB Mobil"
+                    />
+                    <label class="form-check-label" for="ex-radio-2"
+                      >Marketing BPKB Mobil</label
+                    >
+                  </div>
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="ex-radio-3"
+                      name="divisi"
+                      value="Marketing BPKB Motor"
+                    />
+                    <label class="form-check-label" for="ex-radio-3"
+                      >Marketing BPKB Motor</label
+                    >
+                  </div>
+                  <b>Keterangan Tambahan</b>
+                  <div class="mb-3 mt-3 pb-1">
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      name="keterangan"
+                      placeholder="Ex. Avanza, Xenia, tahun kendaraan dsb"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-lg-6 col-md-8">
+                      <button
+                        class="btn btn-primary btn-block"
+                        type="button"
+                        onclick="sendEmail()"
+                      >
+                        Hubungi Kami
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <div class="d-flex align-items-center bg-primary p-4 rounded-3">
                 <h4 class="text-light">Simulasi Pinjaman Jaminan BPKB Mobil</h4>
                 <img
                   src="https://digital-bucket.prod.bfi.co.id/assets/icon/new%20icon/ndfc-desktop.svg"
@@ -649,7 +759,7 @@
               <p class="mt-4 text-light">
                 *Nominal bersifat estimasi, ajukan untuk cek angsuran sesuai
                 mobil yang dijaminkan
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
