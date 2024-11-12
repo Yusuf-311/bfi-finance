@@ -1,342 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Pricelist BFI</title>
-  <!-- SEO Meta Tags-->
-  <meta name="description" content="Around - Multipurpose Bootstrap Template">
-  <meta name="keywords"
-    content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
-  <meta name="author" content="Createx Studio">
-  <!-- Viewport-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Favicon and Touch Icons-->
-  <!-- Browser Logo -->
-  <link rel="icon" href="https://www.bfi.co.id/static/images/logo-bfi.png" />
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
-  <meta name="msapplication-TileColor" content="#766df4">
-  <meta name="theme-color" content="#ffffff">
-  <!-- Page loading styles-->
-  <style>
-    .page-loading {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: all .4s .2s ease-in-out;
-      transition: all .4s .2s ease-in-out;
-      background-color: #fff;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 9999;
-    }
-
-    .page-loading.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .page-loading-inner {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      -webkit-transition: opacity .2s ease-in-out;
-      transition: opacity .2s ease-in-out;
-      opacity: 0;
-    }
-
-    .page-loading.active>.page-loading-inner {
-      opacity: 1;
-    }
-
-    .page-loading-inner>span {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: normal;
-      color: #737491;
-    }
-
-    .page-spinner {
-      display: inline-block;
-      width: 2.75rem;
-      height: 2.75rem;
-      margin-bottom: .75rem;
-      vertical-align: text-bottom;
-      border: .15em solid #766df4;
-      border-right-color: transparent;
-      border-radius: 50%;
-      -webkit-animation: spinner .75s linear infinite;
-      animation: spinner .75s linear infinite;
-    }
-
-    @-webkit-keyframes spinner {
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+  <head>
+    <meta charset="utf-8" />
+    <title>Pricelist BFI</title>
+    <!-- SEO Meta Tags-->
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap Template"
+    />
+    <meta name="keywords" content="touch, creative" />
+    <meta name="author" content="Createx Studio" />
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon and Touch Icons-->
+    <!-- Browser Logo -->
+    <link rel="icon" href="https://www.bfi.co.id/static/images/logo-bfi.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg" />
+    <meta name="msapplication-TileColor" content="#766df4" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
       }
-    }
 
-    @keyframes spinner {
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
       }
-    }
-  </style>
-  <!-- Page loading scripts-->
-  <script>
-    (function () {
-      window.onload = function () {
-        var preloader = document.querySelector('.page-loading');
-        preloader.classList.remove('active');
-        setTimeout(function () {
-          preloader.remove();
-        }, 2000);
-      };
-    })();
 
-  </script>
-  <!-- Vendor Styles-->
-  <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css" />
-  <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css" />
-  <link rel="stylesheet" media="screen" href="vendor/flatpickr/dist/flatpickr.min.css" />
-  <!-- Main Theme Styles + Bootstrap-->
-  <link rel="stylesheet" media="screen" href="css/theme.min.css">
-</head>
-<!-- Body-->
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
 
-<body>
-  <!-- Page loading spinner-->
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
 
-  <main class="page-wrapper">
-    <!-- Header start -->
-    <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header
-      data-fixed-element>
-      <div class="container justify-content-between px-0 px-xl-3">
-        <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"
-          aria-label="Toggle Button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html">
-          <img class="d-none d-lg-block" src="images/logo-bfi.png" sizes="(max-width: 768px) 58px, 80px" alt="Logo BFI"
-            width="80" height="80" />
-          <img class="d-lg-none" src="images/logo-bfi.png" alt="Logo BFI" sizes="(max-width: 768px) 58px, 80px"
-            alt="Logo BFI" width="80" height="80" />
-        </a>
-        <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
-          <div class="offcanvas-header navbar-shadow">
-            <h5 class="mt-1 mb-0">Menu</h5>
-            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-          </div>
-        </div>
-      </div>
-      </div>
-    </header>
-    <!-- Page content-->
-    <!-- Hero-->
-    <section class=" bg-primary py-7">
-      <div class=" container  text-center">
-        <div class="py-md-6">
-          <h1 class="text-light pb-1">Pricelist BFI Finance</h1>
-          <p class="fs-lg text-light">Makes it easier to experience the world.</p>
-        </div>
-      </div>
-    </section>
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
 
-    <!-- Tabel Pricelist -->
-    <section>
-      <div class="d-flex flex-column h-100 bg-light rounded-3 p-4">
-        <div class="py-2 p-md-3">
-          <!-- Title-->
-          <h1 class="h3 mb-3 pb-2 text-center text-sm-start">Pricelist Motor</h1>
-          <!-- Alert-->
-          <!-- Payment methods (table)-->
-          <div class="table-responsive fs-md">
-            <table class="table table-hover mb-0">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Tipe Motor</th>
-                  <th>Cicilan</th>
-                  <th>Angsuran (Rp)</th>
-                  <th>Total DP</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class=" align-middle">1</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">2</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">3</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">4</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">5</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
 
-              </tbody>
-            </table>
-          </div>
-          <hr class="mt-0 mb-4">
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
 
-        </div>
-      </div>
-      <div class="d-flex flex-column h-100 bg-light rounded-3  p-4">
-        <div class="py-2 p-md-3">
-          <!-- Title-->
-          <h1 class="h3 mb-3 pb-2 text-center text-sm-start">Pricelist Mobil</h1>
-          <!-- Alert-->
-          <!-- Payment methods (table)-->
-          <div class="table-responsive fs-md">
-            <table class="table table-hover mb-0">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Tipe Mobil</th>
-                  <th>Cicilan</th>
-                  <th>Angsuran (Rp)</th>
-                  <th>Total DP</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class=" align-middle">1</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">2</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">3</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">4</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
-                <tr>
-                  <td class=" align-middle">5</td>
-                  <td class="py-3 align-middle">Toyota Avanza G M/T</td>
-                  <td class="py-3 align-middle">36</td>
-                  <td class="py-3 align-middle">3.500.000</td>
-                  <td class="py-3 align-middle">50.000.000</td>
-                </tr>
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+    <!-- Vendor Styles-->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/simplebar/dist/simplebar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/tiny-slider/dist/tiny-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css" />
+  </head>
+  <!-- Body-->
 
-              </tbody>
-            </table>
-          </div>
-          <hr class="mt-0 mb-4">
-          <div class="text-sm-end"><a class="btn btn-primary" href="#add-payment" data-bs-toggle="modal">Add payment
-              method</a></div>
-        </div>
-      </div>
+  <body>
+    <!-- Page loading spinner-->
 
-    </section>
-
-
-
-  </main>
-  <!-- Footer Start -->
-  <footer class="footer bg-dark py-2" data-bs-theme="dark">
-    <div class="container pt-md-2 pt-lg-3 pt-xl-4">
-      <div class="row pb-5 pt-sm-2 mb-lg-2">
-        <div class="col-md-4 col-lg-3 pb-2 pb-md-0 mb-4 mb-md-0">
-          <a class="navbar-brand py-0 mb-3 mb-md-4" href="index.html">
-            <img src="images/logo-bfi.png" alt="" />
-            <span class="text-white  h5 ms-3">PT BFI Finance Indonesia Tbk
-            </span>
+    <main class="page-wrapper">
+      <!-- Header start -->
+      <header
+        class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky"
+        data-scroll-header
+        data-fixed-element
+      >
+        <div class="container justify-content-between px-0 px-xl-3">
+          <button
+            class="navbar-toggler ms-n2 me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#primaryMenu"
+            aria-label="Toggle Button"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a
+            class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4"
+            href="index.html"
+          >
+            <img
+              class="d-none d-lg-block"
+              src="images/logo-bfi.png"
+              sizes="(max-width: 768px) 58px, 80px"
+              alt="Logo BFI"
+              width="80"
+              height="80"
+            />
+            <img
+              class="d-lg-none"
+              src="images/logo-bfi.png"
+              alt="Logo BFI"
+              sizes="(max-width: 768px) 58px, 80px"
+              alt="Logo BFI"
+              width="80"
+              height="80"
+            />
           </a>
-          <p class=" text-light pb-2 pb-md-3 mb-3">
-            BFI Tower <br />
-            Sunburst CBD Lot. 1.2 <br />
-            Jl. Kapt. Soebijanto Djojohadikusumo <br />
-            BSD City - Tangerang Selatan 15322
-          </p>
-          <div class="d-flex gap-3">
-            <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle" href="#" aria-label="Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle" href="#" aria-label="Instagram">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle" href="#" aria-label="LinkedIn">
-              <i class="bi bi-linkedin"></i>
-            </a>
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button
+                class="btn-close lead"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body"></div>
           </div>
         </div>
+      </header>
+      <!-- Page content-->
+      <!-- Hero-->
+      <section class="bg-primary py-7">
+        <div class="container text-center">
+          <div class="py-md-6">
+            <h1 class="text-light pb-1">Pricelist BFI Finance</h1>
+            <p class="fs-lg text-light">
+              Makes it easier to experience the world.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabel Pricelist -->
+      <section>
+        <div class="d-flex flex-column h-100 bg-light rounded-3 p-4">
+          <div class="py-2 p-md-3">
+            <!-- Title-->
+            <h1 class="h3 mb-3 pb-2 text-center text-sm-start">
+              Pricelist Motor
+            </h1>
+            <!-- Alert-->
+            <!-- Payment methods (table)-->
+            <div class="table-responsive fs-md">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tipe Motor</th>
+                    <th>Cicilan</th>
+                    <th>Angsuran (Rp)</th>
+                    <th>Total DP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-middle">1</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">2</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">3</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">4</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">5</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr class="mt-0 mb-4" />
+          </div>
+        </div>
+        <div class="d-flex flex-column h-100 bg-light rounded-3 p-4">
+          <div class="py-2 p-md-3">
+            <!-- Title-->
+            <h1 class="h3 mb-3 pb-2 text-center text-sm-start">
+              Pricelist Mobil
+            </h1>
+            <!-- Alert-->
+            <!-- Payment methods (table)-->
+            <div class="table-responsive fs-md">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tipe Mobil</th>
+                    <th>Cicilan</th>
+                    <th>Angsuran (Rp)</th>
+                    <th>Total DP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-middle">1</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">2</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">3</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">4</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">5</td>
+                    <td class="py-3 align-middle">Toyota Avanza G M/T</td>
+                    <td class="py-3 align-middle">36</td>
+                    <td class="py-3 align-middle">3.500.000</td>
+                    <td class="py-3 align-middle">50.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr class="mt-0 mb-4" />
+            <div class="text-sm-end">
+              <a
+                class="btn btn-primary"
+                href="#add-payment"
+                data-bs-toggle="modal"
+                >Add payment method</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Start -->
+    <footer class="footer bg-dark py-2" data-bs-theme="dark">
+      <div class="container pt-md-2 pt-lg-3 pt-xl-4">
+        <div class="row pb-5 pt-sm-2 mb-lg-2">
+          <div class="col-md-4 col-lg-3 pb-2 pb-md-0 mb-4 mb-md-0">
+            <a class="navbar-brand py-0 mb-3 mb-md-4" href="index.html">
+              <img src="images/logo-bfi.png" alt />
+              <span class="text-white h5 ms-3"
+                >PT BFI Finance Indonesia Tbk
+              </span>
+            </a>
+            <p class="text-light pb-2 pb-md-3 mb-3">
+              BFI Tower <br />
+              Sunburst CBD Lot. 1.2 <br />
+              Jl. Kapt. Soebijanto Djojohadikusumo <br />
+              BSD City - Tangerang Selatan 15322
+            </p>
+            <div class="d-flex gap-3">
+              <a
+                class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle"
+                href="#"
+                aria-label="Facebook"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a
+                class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle"
+                href="#"
+                aria-label="Instagram"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a
+                class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle"
+                href="#"
+                aria-label="LinkedIn"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="nav fs-sm mb-0">
+          <span class="text-light"
+            >© All rights reserved. Made by
+            <a href="https://netfin.id/" class="text-primary">Netfin</a>
+          </span>
+        </p>
       </div>
-      <p class="nav fs-sm mb-0">
-        <span class="text-light">© All rights reserved. Made by <a href="https://netfin.id/"
-            class="text-primary">Netfin</a>
-        </span>
-      </p>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Footer End -->
-  <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll data-fixed-element><span
-      class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up">
-    </i></a>
-  <!-- Vendor scrits: js libraries and plugins-->
-  <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/simplebar/dist/simplebar.min.js"></script>
-  <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="vendor/jarallax/dist/jarallax.min.js"></script>
-  <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
-  <script src="vendor/flatpickr/dist/flatpickr.min.js"></script>
-  <script src="vendor/flatpickr/dist/plugins/rangePlugin.js"></script>
-  <!-- Main theme script-->
-  <script src="js/theme.min.js"></script>
-</body>
-
+    <!-- Footer End -->
+    <!-- Back to top button--><a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      data-fixed-element
+      ><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span
+      ><i class="btn-scroll-top-icon ai-arrow-up"> </i
+    ></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="vendor/flatpickr/dist/plugins/rangePlugin.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
 </html>
